@@ -29,10 +29,6 @@ void setup() {
   randomSeed(analogRead(A0));
 }
 
-int randomNum() {
-  return random(255);
-}
-
 // Debounce 
 boolean debounce(boolean previous) {
   boolean current = digitalRead(button);
