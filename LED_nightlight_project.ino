@@ -39,6 +39,8 @@ boolean debounce(boolean previous) {
   return current;
 }
 
+
+// The various LED modes
 void led_mode(int mode) {
   if (mode == 1) { // Red
     digitalWrite(b_led, LOW);
@@ -95,8 +97,6 @@ void led_mode(int mode) {
   }
 }
 
-
-
 void loop() {
 
   button_state = debounce(prev_button_state);
@@ -105,6 +105,8 @@ void loop() {
   }
   prev_button_state = button_state; // Changes button state
 
+
+  // Resets the mode counter and generates a new random color for the random LED mode
   if (mode == 9) {
     number_1 = random(255);
     number_2 = random(255);
